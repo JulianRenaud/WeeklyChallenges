@@ -104,13 +104,13 @@ namespace ChallengesWithTestsMark8
             
             for (int i = 0; i < numbers.Length; i++)
             {
-                if (i % 2 == 0)
+                if (numbers[i] % 2 == 0)
                 {
-                    sum += 0;
+                    sum += numbers[i];
                 }
                 else
                 {
-                    sum += numbers[i];
+                    sum += 0;
                 }
 
 
@@ -122,12 +122,33 @@ namespace ChallengesWithTestsMark8
 
         public bool IsSumOdd(List<int> numbers)
         {
-            throw new NotImplementedException();
+            var sum = 0;
+            if (numbers == null || !numbers.Any())
+            {
+                return false;
+            }
+            for (var i = 0; i < numbers.Count; i++)
+            {
+                sum += numbers[i];
+            }
+            if (sum % 2 == 0)
+            {
+                return false;
+            }
+            return true;
         }
 
         public long CountOfPositiveOddsBelowNumber(long number)
         {
-            throw new NotImplementedException();
+            if (number >= 0)
+            {
+                
+                return number / 2;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
